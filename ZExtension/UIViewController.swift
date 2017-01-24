@@ -8,7 +8,12 @@
 
 import UIKit
 
-extension UIViewController {
+/**
+
+ UIViewController extension providing additional functunality
+
+ */
+public extension UIViewController {
 
    /**
     
@@ -25,7 +30,7 @@ extension UIViewController {
       An instance of the the passed type
 
     */
-   func ofType <T: UIViewController>(_ type: T.Type) -> T {
+   public func ofType <T: UIViewController>(_ type: T.Type) -> T {
 
       let viewController = named("\(type)")
 
@@ -52,7 +57,7 @@ extension UIViewController {
     An instance of the the passed type
 
     */
-   class func ofType <T: UIViewController>(_ type: T.Type, in storyboard: String) -> T {
+   public class func ofType <T: UIViewController>(_ type: T.Type, in storyboard: String) -> T {
 
       let viewController = named("\(type)", in: storyboard)
 
@@ -76,7 +81,7 @@ extension UIViewController {
     An instance of UIViewController
 
     */
-   class func fromNib(_ nibName: String) -> UIViewController {
+   public class func fromNib(_ nibName: String) -> UIViewController {
       return UIViewController(nibName: nibName, bundle: nil)
    }
 
@@ -95,7 +100,7 @@ extension UIViewController {
     An instance of UIViewController
 
     */
-   func named(_ identifier: String) -> UIViewController {
+   public func named(_ identifier: String) -> UIViewController {
 
       let storyboard = self.storyboard
 
@@ -115,7 +120,7 @@ extension UIViewController {
          let viewController = UIViewController.named("viewController", in: "main")
 
     */
-   class func named(_ identifier: String, in storyboard: String) -> UIViewController {
+   public class func named(_ identifier: String, in storyboard: String) -> UIViewController {
 
       let storyboard = UIStoryboard(name: storyboard, bundle: Bundle.main)
 

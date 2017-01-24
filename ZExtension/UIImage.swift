@@ -8,7 +8,13 @@
 
 import UIKit
 
-extension UIImage {
+
+/**
+ 
+ UIImage extension providing additional functunality
+
+ */
+public extension UIImage {
 
    /**
 
@@ -24,7 +30,7 @@ extension UIImage {
     - Returns: the generated image from the given values
 
     */
-   class func gradient(start: UIColor, end: UIColor, frame: CGRect, startLocation: Double = 0.05, endLocation: Double = 0.95) -> UIImage {
+   public class func gradient(start: UIColor, end: UIColor, frame: CGRect, startLocation: Double = 0.05, endLocation: Double = 0.95) -> UIImage {
 
       // start with a CAGradientLayer
       let gradientLayer = CAGradientLayer()
@@ -55,7 +61,7 @@ extension UIImage {
       - size: the size of the returned image default is CGSize(width: 10, height: 10)
 
     */
-   convenience init(color: UIColor, size: CGSize = CGSize(width: 10, height: 10)) {
+   public convenience init(color: UIColor, size: CGSize = CGSize(width: 10, height: 10)) {
       let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
       UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
       color.setFill()
@@ -76,7 +82,7 @@ extension UIImage {
     - Returns: the generated UIImage
 
     */
-   func corner(_ radius: CGFloat? = nil) -> UIImage {
+   public func corner(_ radius: CGFloat? = nil) -> UIImage {
 
       let rect = CGRect(origin:CGPoint(x: 0, y: 0), size: self.size)
 
@@ -98,7 +104,7 @@ extension UIImage {
     If the calculation failed 0 will be returned
 
     */
-   var bytes: Int {
+   public var bytes: Int {
 
       return UIImageJPEGRepresentation(self, 0)?.count ?? 0
    }

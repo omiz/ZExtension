@@ -8,14 +8,19 @@
 
 import UIKit
 
-extension UIColor {
+/**
+
+ UIColor extension providing additional functunality
+
+ */
+public extension UIColor {
 
    /**
 
     Instantiate color from hex value. '#' is optional
 
     */
-   convenience init(hex: String) {
+   public convenience init(hex: String) {
       let hexString:String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
       let scanner            = Scanner(string: hexString)
 
@@ -43,7 +48,7 @@ extension UIColor {
     The returned value does not have alpha
 
     */
-   var hex: String {
+   public var hex: String {
       var r:CGFloat = 0
       var g:CGFloat = 0
       var b:CGFloat = 0

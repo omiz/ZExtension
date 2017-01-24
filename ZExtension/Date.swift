@@ -8,7 +8,12 @@
 
 import Foundation
 
-extension Date {
+/**
+
+ Date extension providing additional functunality
+
+ */
+public extension Date {
 
    /**
 
@@ -17,7 +22,7 @@ extension Date {
     If the value does not exist 0 will be returned
 
     */
-   var minute: Int {
+   public var minute: Int {
       let calendar = Calendar.current
       let components = (calendar as NSCalendar).components(NSCalendar.Unit.minute, from: self)
       let minute = components.minute
@@ -32,7 +37,7 @@ extension Date {
     If the value does not exist 0 will be returned
 
     */
-   var hour: Int {
+   public var hour: Int {
       let calendar = Calendar.current
       let components = (calendar as NSCalendar).components(NSCalendar.Unit.hour, from: self)
       let hour = components.hour
@@ -45,7 +50,7 @@ extension Date {
     check if in today date
 
     */
-   var isToday: Bool {
+   public var isToday: Bool {
       return NSCalendar.current.isDateInToday(self)
    }
 
@@ -59,7 +64,7 @@ extension Date {
     - Returns: minites difference in Int
 
     */
-   func minute(to date: Date) -> Int {
+   public func minute(to date: Date) -> Int {
       let calendar = Calendar.current
       let components = (calendar as NSCalendar).components(NSCalendar.Unit.minute, from: self, to: date, options: [])
       let minute = components.minute
@@ -77,7 +82,7 @@ extension Date {
     - Returns: hours difference in Int
 
     */
-   func hour(to date: Date) -> Int {
+   public func hour(to date: Date) -> Int {
       let calendar = Calendar.current
       let components = (calendar as NSCalendar).components(NSCalendar.Unit.hour, from: self, to: date, options: [])
       let hour = components.hour
@@ -95,7 +100,7 @@ extension Date {
     - Returns: formated string according to the given style
 
     */
-   func date(_ dateStyle: DateFormatter.Style = .short) -> String {
+   public func date(_ dateStyle: DateFormatter.Style = .short) -> String {
       let formatter = DateFormatter()
       formatter.dateStyle = dateStyle
       formatter.timeStyle = .none
@@ -115,7 +120,7 @@ extension Date {
     - Returns: formated string according to the given style
     
     */
-   func time(_ dateStyle: DateFormatter.Style = .short) -> String {
+   public func time(_ dateStyle: DateFormatter.Style = .short) -> String {
       let formatter = DateFormatter()
       formatter.dateStyle = .none
       formatter.timeStyle = dateStyle
@@ -137,7 +142,7 @@ extension Date {
     - Returns: formated string according to the given style
 
     */
-   func format(_ dateFormat: String = "dd.MMMM yyyy, HH:mm") -> String {
+   public func format(_ dateFormat: String = "dd.MMMM yyyy, HH:mm") -> String {
       let formatter = DateFormatter()
 
       formatter.dateFormat = dateFormat

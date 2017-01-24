@@ -8,7 +8,12 @@
 
 import UIKit
 
-extension UIScrollView {
+/**
+
+ UIScrollView extension providing additional functunality
+
+ */
+public extension UIScrollView {
 
    /**
     
@@ -18,7 +23,7 @@ extension UIScrollView {
       - animated: of type bool default is true
 
     */
-   func scrollToTop(animated: Bool = true) {
+   public func scrollToTop(animated: Bool = true) {
       setContentOffset(CGPoint.zero, animated: animated)
    }
 
@@ -30,7 +35,7 @@ extension UIScrollView {
       - animated: of type bool default is true
 
     */
-   func scrollToBottom(animated: Bool = true) {
+   public func scrollToBottom(animated: Bool = true) {
       let bottomOffset = CGPoint(x: 0, y: contentSize.height - bounds.size.height + contentInset.bottom)
       setContentOffset(bottomOffset, animated: animated)
    }
