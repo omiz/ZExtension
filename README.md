@@ -27,7 +27,7 @@ If you prefer not to use CocoaPods dependency manager, you can integrate the lib
 Copy the .swift files into your project or clone and include the repo into your project.
 
 ## Todo
-- [x] Usage section
+- [ ] Usage section
 - [ ] Add demo
 - [ ] your suggestions
 
