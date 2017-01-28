@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "ZExtension"
-  s.version = "0.2.0"
+  s.version = "0.3"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.summary = "Apple framework extensions for an easier and faster coding "
   s.homepage = "https://github.com/omiz/ZExtension"

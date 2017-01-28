@@ -72,17 +72,28 @@ public extension UIViewController {
     
     Example:
     
-         let viewController = UIViewController.fromNib("nibName")
+         let viewController = CustomViewController.fromNib("nib")
+
+         //viewContoller will be instaniated using the view in the file nib.xib of type CustomViewController
+    
+    or
+    
+         class CustomViewController: UIViewController {
+         
+            var instance: CustomViewController {
+               return fromNib("ForYouViewController")
+            }
+         }
     
     - Parameters:
       - nibName: The name of the nib containing the controller.
 
     - Returns:
-    An instance of UIViewController
+    An instance extend UIViewController
 
     */
-   public class func fromNib(_ nibName: String) -> UIViewController {
-      return UIViewController(nibName: nibName, bundle: nil)
+   public class func fromNib<T: UIViewController>(_ nibName: String) -> T {
+      return T(nibName: nibName, bundle: nil)
    }
 
    /**

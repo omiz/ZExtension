@@ -17,7 +17,10 @@ public extension UIColor {
 
    /**
 
-    Instantiate color from hex value. '#' is optional
+    Instantiate color from hex value.
+    
+    - Parameters:
+      - hex: The hex string of the color '#' is optional
 
     */
    public convenience init(hex: String) {
